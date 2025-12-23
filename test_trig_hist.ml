@@ -1,6 +1,3 @@
-(* ==========================================
-   1. ユーザー提供の実装
-   ========================================== *)
 let pi = 3.1415926535
 
 let rec reduction_2pi a =
@@ -12,6 +9,7 @@ let rec reduction_2pi a =
       g a_new (p *. 0.5) in
   let p = f a (2. *. pi) in
   g a p
+
 
 let rec sin_taylor a =
   let a2 = a *. a in
@@ -54,7 +52,6 @@ let rec min_caml_atan a =
     let b = atan_taylor ((a -. 1.)/.(a +. 1.)) in
     if sign then pi/.4. +. b else -.pi/.4. -. b
   else if sign then pi/.2. -. atan_taylor (1./.a) else atan_taylor (1./.a) -. pi/.2.
-
 (* ==========================================
    2. 分布集計ロジック
    ========================================== *)
